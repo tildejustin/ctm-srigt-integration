@@ -1,18 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "ctm-srigt-integration",
   "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "CTM SpeedrunIGT Integration",
+  "description": "A custom category builder for SpeedrunIGT for monument-type maps",
   "authors": [
-    "Me!"
+    "tildejustin"
   ],
   "contact": {
-    "homepage": "https://legacyfabric.net/",
-    "sources": "https://github.com/Legacy-Fabric/fabric-example-mod"
+    "sources": "https://github.com/tildejustin/ctm-srigt-integration"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -20,13 +18,14 @@
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "ctm-srigt-integration.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.19",
-    "minecraft": "1.8.9"
+    "fabricloader": ">=0.12.12",
+    "minecraft": ">=1.7.2 <=1.12.2",
+    "speedrunigt": ">= 7.0"
   },
   "suggests": {
-    "another-mod": "*"
+    "custom-map-resetter": "*"
   }
 }
