@@ -13,8 +13,8 @@
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "speedrunigt": [
+      "xyz.tildejustin.ctm_srigt_integration.CTMTimer"
     ]
   },
   "mixins": [
@@ -23,7 +23,7 @@
   "depends": {
     "fabricloader": ">=0.12.12",
     "minecraft": ">=1.7.2 <=1.12.2",
-    "speedrunigt": ">= 7.0"
+    "speedrunigt": ">=7.0"
   },
   "suggests": {
     "custom-map-resetter": "*"
