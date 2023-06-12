@@ -22,16 +22,10 @@ public class CTMCategory {
 
     public static class Entry {
         public Identifier identifier;
-        public int dataValue;
         public BlockPos position;
 
         public Entry(String identifier, int x, int y, int z) {
-            this(identifier, 0, x, y, z);
-        }
-
-        public Entry(String identifier, int dataValue, int x, int y, int z) {
             this.identifier = new Identifier(identifier);
-            this.dataValue = dataValue;
             this.position = new BlockPos(x, y, z);
         }
     }
@@ -51,21 +45,15 @@ public class CTMCategory {
         List<Entry> criteria = new ArrayList<>();
         while (file.hasNextLine()) {
             String[] parts = file.nextLine().split(" ");
-            if (parts.length < 4 || parts.length > 5) {
-                throw new MalformedCategoryException("expected 4 to 5 parts in a criteria");
+            if (parts.length != 4) {
+                throw new MalformedCategoryException("expected 4 in a criteria");
             }
             criteria.add(
-                    parts.length == 4 ? new Entry(
+                    new Entry(
                             parts[0],
                             Integer.parseInt(parts[1]),
                             Integer.parseInt(parts[2]),
                             Integer.parseInt(parts[3])
-                    ) : new Entry(
-                            parts[0],
-                            Integer.parseInt(parts[1]),
-                            Integer.parseInt(parts[2]),
-                            Integer.parseInt(parts[3]),
-                            Integer.parseInt(parts[4])
                     )
             );
         }
