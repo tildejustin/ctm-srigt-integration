@@ -22,7 +22,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.12.12",
-    "minecraft": ">=1.7.2 <=1.12.2",
+    "minecraft": ">=1.8 <=1.12.2",
     "speedrunigt": ">=7.0"
   },
   "suggests": {
