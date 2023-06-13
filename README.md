@@ -45,3 +45,6 @@ Take the Stairs
 minecraft:yellow_stained_glass -48 -59 63
 ```
 since this is post-1.12, there are no data values
+
+if you have any issue or questions, you can dm me on discord at `tildejustin#4317`\
+have fun running ^-^
