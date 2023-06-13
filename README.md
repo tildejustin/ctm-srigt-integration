@@ -1,5 +1,5 @@
 ## CTM SpeedrunIGT Integration
-category files go in `.minecraft/speedrunigt/ctm-srigt-integration` folder
+category files go in `.minecraft/speedrunigt/ctm-srigt-integration` folder (file names do not matter, it will try to parse anything in the folder)
 
 if it doesn't work at first, make sure the right category is selected
 ### category specifications
