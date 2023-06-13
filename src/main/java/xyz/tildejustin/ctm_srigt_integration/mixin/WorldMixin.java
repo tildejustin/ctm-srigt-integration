@@ -49,8 +49,6 @@ public abstract class WorldMixin extends World {
         }
     }
 
-    // this runs four times on every correct positional block update, I don't know why
-    // doesn't impact performance, just unnecessary
     private boolean checkCriteria(CTMCategory category) {
         for (CTMCategory.Entry entry : category.criteria.toArray(new CTMCategory.Entry[0])) {
             boolean correctBlock = this.getBlockState(entry.position).getBlock().equals(Registry.BLOCK.get(entry.identifier));
