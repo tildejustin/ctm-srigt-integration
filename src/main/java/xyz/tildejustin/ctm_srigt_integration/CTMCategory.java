@@ -21,7 +21,7 @@ public class CTMCategory {
     }
 
     public static class Entry {
-        public Identifier identifier;
+        public String identifier;
         public int dataValue;
         public BlockPos position;
 
@@ -30,7 +30,7 @@ public class CTMCategory {
         }
 
         public Entry(String identifier, int dataValue, int x, int y, int z) {
-            this.identifier = new Identifier(identifier);
+            this.identifier = addPrefix(identifier);
             this.dataValue = dataValue;
             this.position = new BlockPos(x, y, z);
         }
@@ -70,5 +70,9 @@ public class CTMCategory {
             );
         }
         return new CTMCategory(id, name, criteria);
+    }
+
+    private static String addPrefix(String id) {
+        return id.indexOf(58) == -1 ? "minecraft:" + id : id;
     }
 }

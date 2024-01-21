@@ -1,6 +1,6 @@
 plugins {
-	id 'fabric-loom' version "1.2-SNAPSHOT"
-	id 'legacy-looming' version "1.2-SNAPSHOT"
+	id 'fabric-loom' version "1.5-SNAPSHOT"
+	id 'legacy-looming' version "1.4-SNAPSHOT"
 	id 'maven-publish'
 }
 
@@ -16,18 +16,18 @@ loom {
 	// customMinecraftManifest.set("https://meta.legacyfabric.net/v2/manifest/${minecraft_version}")
 
 	// Required by 1.7.x
-	// runs {
-	// 	client {
-	// 		programArgs "--userProperties", "{}"
-	// 	}
-	// }
+	runs {
+		client {
+			programArgs "--userProperties", "{}"
+		}
+	}
 }
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings(legacy.yarn(project.minecraft_version, project.yarn_build))
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "com.github.RedLime:SpeedRunIGT:$project.minecraft_version-SNAPSHOT"
+	modImplementation "com.github.redlime:speedrunigt:$project.minecraft_version-SNAPSHOT"
 }
 
 base {
