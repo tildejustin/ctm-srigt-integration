@@ -1,6 +1,5 @@
 package xyz.tildejustin.ctm_srigt_integration;
 
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import xyz.tildejustin.ctm_srigt_integration.exception.EmptyCategoryException;
 import xyz.tildejustin.ctm_srigt_integration.exception.MalformedCategoryException;
@@ -21,16 +20,16 @@ public class CTMCategory {
     }
 
     public static class Entry {
-        public String identifier;
+        public int identifier;
         public int dataValue;
         public BlockPos position;
 
-        public Entry(String identifier, int x, int y, int z) {
+        public Entry(int identifier, int x, int y, int z) {
             this(identifier, 0, x, y, z);
         }
 
-        public Entry(String identifier, int dataValue, int x, int y, int z) {
-            this.identifier = addPrefix(identifier);
+        public Entry(int identifier, int dataValue, int x, int y, int z) {
+            this.identifier = identifier;
             this.dataValue = dataValue;
             this.position = new BlockPos(x, y, z);
         }
@@ -56,12 +55,12 @@ public class CTMCategory {
             }
             criteria.add(
                     parts.length == 4 ? new Entry(
-                            parts[0],
+                            Integer.parseInt(parts[0]),
                             Integer.parseInt(parts[1]),
                             Integer.parseInt(parts[2]),
                             Integer.parseInt(parts[3])
                     ) : new Entry(
-                            parts[0],
+                            Integer.parseInt(parts[0]),
                             Integer.parseInt(parts[1]),
                             Integer.parseInt(parts[2]),
                             Integer.parseInt(parts[3]),
@@ -70,9 +69,5 @@ public class CTMCategory {
             );
         }
         return new CTMCategory(id, name, criteria);
-    }
-
-    private static String addPrefix(String id) {
-        return id.indexOf(58) == -1 ? "minecraft:" + id : id;
     }
 }
